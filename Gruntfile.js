@@ -99,6 +99,15 @@ module.exports = function(grunt) {
         ]
       }
     },
+    compass: {
+      dist: {                   
+        options: {              
+          sassDir: 'src/stylesheets',
+          cssDir: 'dist/css',
+          environment: 'production'
+        }
+      }
+    },
     watch: {
       markdown: {
         files: ['**/*.md'],
@@ -119,10 +128,11 @@ module.exports = function(grunt) {
   grunt.loadNpmTasks('grunt-contrib-watch');
   grunt.loadNpmTasks('grunt-contrib-copy');
   grunt.loadNpmTasks('grunt-contrib-clean');
+  grunt.loadNpmTasks('grunt-contrib-compass');
   grunt.loadNpmTasks('grunt-markdown');
   grunt.loadNpmTasks('grunt-gh-pages');
 
   // Default task.
   // grunt.registerTask('default', ['jshint', 'qunit', 'concat', 'uglify']);
-  grunt.registerTask('default', ['clean', 'copy', 'markdown']);
+  grunt.registerTask('default', ['copy', 'markdown', 'compass']);
 };
