@@ -82,13 +82,18 @@ module.exports = function(grunt) {
     copy: {
       main: {
         files: [
-          // includes files within path
           {
             expand: true, 
             cwd: 'src',
             src: ['index.html'], 
             dest: 'dist/', 
             filter: 'isFile'
+          },
+          {
+            expand: true,
+            cwd: 'src/images',
+            src: ['**'],
+            dest: 'dist/img'
           }
           // // includes files within path and its sub-directories
           // {expand: true, src: ['path/**'], dest: 'dest/'},
@@ -110,12 +115,16 @@ module.exports = function(grunt) {
     },
     watch: {
       markdown: {
-        files: ['**/*.md'],
+        files: ['src/markdown/**/*.md', 'src/templates/template.jst'],
         tasks: ['markdown']
       },
-      index: {
-        files: ['src/index.html'],
+      copy: {
+        files: ['src/index.html', 'src/images/**'],
         tasks: ['copy']
+      },
+      compass: {
+        files: ['src/stylesheets/**/*.scss'],
+        tasks: ['compass']
       }
     }
   });

@@ -3,3 +3,10 @@
 
 // Bring in foundation framework
 @import 'vendor/foundation';
+
+// Import Compass libs
+@import 'compass/css3/transform';
+
+// Import partials
+@import 'partials/layout';
+@import 'partials/home'; 
