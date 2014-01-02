@@ -1,5 +1,7 @@
-node_modules
-.grunt
-.ruby-version
-.ruby-gemset
-.sass-cache
+/node_modules
+/.grunt
+/.ruby-version
+/.ruby-gemset
+/.sass-cache
+/dist
+/.bundle
