@@ -82,25 +82,8 @@ module.exports = function(grunt) {
     copy: {
       main: {
         files: [
-          {
-            expand: true, 
-            cwd: 'src',
-            src: ['index.html'], 
-            dest: 'dist/', 
-            filter: 'isFile'
-          },
-          {
-            expand: true,
-            cwd: 'src/images',
-            src: ['**'],
-            dest: 'dist/img'
-          }
-          // // includes files within path and its sub-directories
-          // {expand: true, src: ['path/**'], dest: 'dest/'},
-          // // makes all src relative to cwd
-          // {expand: true, cwd: 'path/', src: ['**'], dest: 'dest/'},
-          // // flattens results to a single level
-          // {expand: true, flatten: true, src: ['path/**'], dest: 'dest/', filter: 'isFile'}
+          {expand: true, cwd: 'src', src: ['index.html'], dest: 'dist/', filter: 'isFile'},
+          {expand: true, cwd: 'src/images', src: ['**'], dest: 'dist/img'}
         ]
       }
     },
@@ -109,6 +92,7 @@ module.exports = function(grunt) {
         options: {              
           sassDir: 'src/stylesheets',
           cssDir: 'dist/css',
+          outputStyle: 'compressed',
           environment: 'production'
         }
       }
@@ -144,4 +128,5 @@ module.exports = function(grunt) {
   // Default task.
   // grunt.registerTask('default', ['jshint', 'qunit', 'concat', 'uglify']);
   grunt.registerTask('default', ['copy', 'markdown', 'compass']);
+  grunt.registerTask('autobuild', ['clean', 'copy', 'markdown', 'compass', 'gh-pages'])
 };
