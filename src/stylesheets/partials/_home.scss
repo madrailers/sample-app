@@ -27,10 +27,6 @@
   }
 }
 
-.content-logo {
-
-}
-
 .home-row {
   margin-top: 0;
   @media #{$large-up} {
@@ -49,10 +45,4 @@
       font-size: 3.25rem;
     }
   }
-}
-
-.right-container {
-  h1 { text-align: right; }
-  background-color: #FDD5C3;
-  padding: 20px;
 }
