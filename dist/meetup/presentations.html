@@ -6,6 +6,7 @@
         <title>Test Page</title>
         <meta name="description" content="">
         <meta name="viewport" content="width=device-width, initial-scale=1">
+        
         <link rel="stylesheet" type="text/css" href="../css/main.css">
         <link href="//netdna.bootstrapcdn.com/font-awesome/4.0.3/css/font-awesome.css" rel="stylesheet">
     </head>
@@ -21,17 +22,34 @@
                         </div>
                         <ul class="side-nav">
                             <li>
-                                <a href="../meetup/index.html">MadRailers Info</a>
+                                <a href="/meetup/index.html">MadRailers Information</a>
+                                <ul class="sub-side-nav">
+                                    <li><a href="/meetup/schedule.html"><i class="fa fa-calendar"></i> Meetups</a></li>
+                                    <li><a href="/meetup/presentations.html"><i class="fa fa-youtube"></i> Presentations</a></li>
+                                </ul>
                             </li>
-                            <li><a href="../learn/index.html">Educational Resources</a></li>
+                            <li>
+                                <a href="../learn/index.html">Educational Resources</a>
+                                <ul class="sub-side-nav">
+                                    <li><a href="../learn/index.html#tutorials">Tutorials</a></li>
+                                    <li><a href="../learn/index.html#reference">Reference</a></li>
+                                    <li><a href="../learn/index.html#screencasts">Screencasts</a></li>
+                                    <li><a href="../learn/index.html#camps">Camps</a></li>
+                                    <li><a href="../learn/index.html#collegiate">Collegiate</a></li>
+                                </ul>
+                            </li>
                         </ul>
                     </div>                    
                 </div>
                 <div class="large-8 columns">
                     <div class="content-container">
-                        <h1 id="my-test-example">My Test Example</h1>
-<p>This markdown file should be translated.</p>
+                        <h1 id="presentations">Presentations</h1>
+<p>We try to record all of the presentations at our monthly meetups and upload them
+to YouTube. Below you can check out the most recent presentations, but the entire
+list can be found at our <a href="https://www.youtube.com/channel/UCpxYqZzpZNIA98Ps6hKJuUw?feature=watch">YouTube channel</a>.</p>
+<div id="videos"></div>
 
+<script src="/js/vendor/require.js" data-main="/js/main.js"></script>
                     </div>
                 </div>
             </div>

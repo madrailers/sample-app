@@ -9,53 +9,51 @@ module.exports = function(grunt) {
       '<%= grunt.template.today("yyyy-mm-dd") %>\n' +
       '<%= pkg.homepage ? "* " + pkg.homepage + "\\n" : "" %>' +
       '* Copyright (c) <%= grunt.template.today("yyyy") %> <%= pkg.author.name %>;' +
-      ' Licensed <%= _.pluck(pkg.licenses, "type").join(", ") %> */\n',
-    // Task configuration.
-    // concat: {
-    //   options: {
-    //     banner: '<%= banner %>',
-    //     stripBanners: true
-    //   },
-    //   dist: {
-    //     src: ['lib/<%= pkg.name %>.js'],
-    //     dest: 'dist/<%= pkg.name %>.js'
-    //   }
-    // },
-    // uglify: {
-    //   options: {
-    //     banner: '<%= banner %>'
-    //   },
-    //   dist: {
-    //     src: '<%= concat.dist.dest %>',
-    //     dest: 'dist/<%= pkg.name %>.min.js'
-    //   }
-    // },
-    // jshint: {
-    //   options: {
-    //     curly: true,
-    //     eqeqeq: true,
-    //     immed: true,
-    //     latedef: true,
-    //     newcap: true,
-    //     noarg: true,
-    //     sub: true,
-    //     undef: true,
-    //     unused: true,
-    //     boss: true,
-    //     eqnull: true,
-    //     browser: true,
-    //     globals: {}
-    //   },
-    //   gruntfile: {
-    //     src: 'Gruntfile.js'
-    //   },
-    //   lib_test: {
-    //     src: ['lib/**/*.js', 'test/**/*.js']
-    //   }
-    // },
-    // qunit: {
-    //   files: ['test/**/*.html']
-    // },
+      ' Licensed <%= _.pluck(pkg.licenses, "type").join(", ") %> */\n',    
+    requirejs: {
+      compile: {
+        options: {       
+          baseUrl: "./",
+          appDir: "src/javascripts",
+          dir: "dist/js",
+          modules: [
+            { name: 'main' }
+          ],
+
+          paths: {
+            jquery: "vendor/jquery",
+            backbone: "vendor/backbone",
+            marionette: "vendor/backbone.marionette",
+            underscore: "vendor/underscore",
+            json: "vendor/json2",
+            text: "vendor/text",
+            handlebars: "vendor/handlebars",
+            moment: "vendor/moment-with-langs.min"
+          },
+
+          shim: {
+            jquery : {
+              exports : 'jQuery'
+            },
+            underscore : {
+              exports : '_'
+            },
+            backbone : {
+              deps : ['jquery', 'underscore'],
+              exports : 'Backbone'
+            },
+            marionette : {
+              deps : ['jquery', 'underscore', 'backbone'],
+              exports : 'Marionette'
+            },
+            handlebars: {
+              exports: 'Handlebars'
+            }
+          }
+        }
+      }
+    },
+
     markdown: {
       all: {
         files: [
@@ -72,13 +70,24 @@ module.exports = function(grunt) {
         }
       }
     },
+
     'gh-pages': {
       options: {
         base: 'dist'
       },
       src: ['**']
     },
-    clean: ["dist"],
+
+    clean: {
+      all: ["dist"],
+      js: [
+        "dist/js/**/*.js",
+        "dist/js/**/*.html",
+        "!dist/js/main.js",
+        "!dist/js/vendor/require.js"
+      ]
+    },
+
     copy: {
       main: {
         files: [
@@ -87,6 +96,7 @@ module.exports = function(grunt) {
         ]
       }
     },
+
     compass: {
       dist: {                   
         options: {              
@@ -97,6 +107,7 @@ module.exports = function(grunt) {
         }
       }
     },
+
     watch: {
       markdown: {
         files: ['src/markdown/**/*.md', 'src/templates/template.jst'],
@@ -109,6 +120,10 @@ module.exports = function(grunt) {
       compass: {
         files: ['src/stylesheets/**/*.scss'],
         tasks: ['compass']
+      },
+      js: {
+        files: ['src/javascripts/**/*.js'],
+        tasks: ['requirejs']
       }
     }
   });
@@ -122,11 +137,11 @@ module.exports = function(grunt) {
   grunt.loadNpmTasks('grunt-contrib-copy');
   grunt.loadNpmTasks('grunt-contrib-clean');
   grunt.loadNpmTasks('grunt-contrib-compass');
+  grunt.loadNpmTasks('grunt-contrib-requirejs');
   grunt.loadNpmTasks('grunt-markdown');
   grunt.loadNpmTasks('grunt-gh-pages');
 
   // Default task.
-  // grunt.registerTask('default', ['jshint', 'qunit', 'concat', 'uglify']);
-  grunt.registerTask('default', ['copy', 'markdown', 'compass']);
+  grunt.registerTask('default', ['copy', 'requirejs', 'clean:js', 'markdown', 'compass']);
   grunt.registerTask('autobuild', ['clean', 'copy', 'markdown', 'compass', 'gh-pages'])
 };
