@@ -1,6 +1,8 @@
 /*global module:false*/
 module.exports = function(grunt) {
 
+  var repo_slug = 'madrailers/sample-app';
+
   // Project configuration.
   grunt.initConfig({
     // Metadata.
@@ -73,7 +75,8 @@ module.exports = function(grunt) {
 
     'gh-pages': {
       options: {
-        base: 'dist'
+        base: 'dist',
+        repo: 'git@github.com:' + repo_slug + '.git'
       },
       src: ['**']
     },
