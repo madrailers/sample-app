@@ -1,4 +1,7 @@
 source "http://rubygems.org"
 
 gem 'compass'
-gem 'travis'
+
+group :development do
+  gem 'travis'
+end
