@@ -6,6 +6,7 @@ branches:
     - master
 
 before_install:
+  - rvm use 2.0.0
   - gem install bundler
   - bundle --without=development
   - npm install -g grunt-cli
