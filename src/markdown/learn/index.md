@@ -1,13 +1,64 @@
-# Learning Homepage
+# Getting Started with Rails
 
-Put a variety of interesting links here resources on learning, installing, getting started with Ruby and Rails.
+Many folks that attend the MadRailers Meetup are new to the Ruby programming language
+and the Ruby on Rails web framework. For those that may be attending an upcoming meetup
+and want to get some understanding before coming to an Office Hours event we've put
+together the following list of **resources**.
 
-Lorem ipsum dolor sit amet, consectetur adipiscing elit. Ut pretium aliquam elit, eget sodales nisi. Class aptent taciti sociosqu ad litora torquent per conubia nostra, per inceptos himenaeos. Integer a tempus leo, id sollicitudin quam. Mauris aliquet faucibus ultricies. Quisque venenatis libero eget est suscipit rhoncus. Nunc ut fermentum nisi. Vivamus molestie tortor urna, sed faucibus sem porttitor et.
+<a name="tutorials"></a>
+## Online Tutorials
 
-Duis hendrerit eros eu leo bibendum, id imperdiet sem consequat. Vestibulum euismod lectus pretium ipsum viverra, nec pulvinar quam accumsan. Phasellus et nunc augue. Phasellus a arcu ultrices, hendrerit eros pharetra, egestas tortor. Morbi vulputate placerat suscipit. Pellentesque nibh odio, convallis eget risus ut, hendrerit rhoncus arcu. Nulla egestas massa at auctor pharetra. Proin ante nibh, iaculis vel urna non, bibendum faucibus massa. Suspendisse vehicula feugiat sodales.
+* [TryRuby.org](http://tryruby.org/) is a great resource for those that have never used
+the Ruby programming language before. Get familiar with the language before diving into
+the Rails framework.
+* [Rails for Zombies](http://railsforzombies.org/) is a quick, fun in-browser tutorial to
+introduce developers to the Rails framework.
+* [RailsTutorial](http://ruby.railstutorial.org/) has a free tutorial option as well as a
+bundle of screencasts and e-book for sale.
 
-Donec ut libero sed ante consequat faucibus ac sit amet sapien. Nam pellentesque quis erat vel sagittis. Pellentesque blandit ornare quam ultricies sagittis. Suspendisse mollis tellus ut lacus tincidunt, ac commodo urna vestibulum. Praesent eu dolor id libero mollis tempus sit amet ac libero. Phasellus dictum magna in neque accumsan dapibus. Cras tempor imperdiet orci quis euismod. Vivamus sed tincidunt metus. Donec hendrerit venenatis urna eget commodo.
+<a name="reference"></a>
+## Reference
 
-Curabitur scelerisque accumsan sem eget consectetur. Etiam sit amet ultricies est. Nunc rhoncus quam at commodo tincidunt. Curabitur eget mollis mi, eu feugiat lorem. Ut vestibulum id neque at ultrices. Nunc quis nunc nec lorem laoreet dapibus. Maecenas sodales lacinia tortor, eu eleifend lorem aliquam tincidunt. Aenean libero nisi, imperdiet quis ligula a, tristique viverra arcu. Curabitur in magna dui. Aliquam at velit porta, pellentesque eros eget, ullamcorper nisl. Sed sollicitudin, dolor sed mollis molestie, felis neque faucibus arcu, eu consectetur dolor felis vitae dui. Nullam vitae diam ullamcorper, blandit magna ornare, scelerisque dui. Nullam semper pharetra quam sit amet convallis.
+* [Rails Guides](http://guides.rubyonrails.org/) are maintained alongside the Rails framework.
+They're a fantastic resource that's a click down from a tutorial but not a low-level API
+documentation. If you're interested in how specific parts of Rails work this is a great starting
+point.
+* [Rails API Documentation](http://api.rubyonrails.org/) is an auto-generated set of documentation
+on the Rails framework. It's VERY low-level but has the highest resolution in terms of information
+about specific classes and methods.
+* [Ruby Toolbox](https://www.ruby-toolbox.com/) groups rubygems into categories based on
+functionality and rates their 'marketshare' in the developer community. It's a good place to check
+out when you ask yourself, "I wonder what most Rails developers use for __________?" where the blank
+could be ORM libraries, user authentication &amp; authorization, templating, logging, etc.
 
-Integer quam dui, facilisis eu nulla et, vehicula vestibulum diam. Duis commodo enim et turpis tincidunt tincidunt. Phasellus dapibus libero ligula, sed egestas dui ultrices sed. Fusce adipiscing convallis nunc. Aliquam pharetra molestie lacinia. Quisque vitae mauris quis velit congue tempus. Nulla posuere est eu libero commodo, at egestas lacus viverra. Vestibulum dapibus nibh quis tristique ornare.
+<a name="screencasts"></a>
+## Screencasts &amp; Podcasts
+
+* [Railscasts](http://railscasts.com/) is the (currently on hiatus) long-running and very popular Rails
+screencast series by Ryan Bates. The archives are deep and valuable- check it out!
+* [Ruby Tapas](http://www.rubytapas.com/) are short screencasts by Avdi Grimm that aim to improve your
+usage of the Ruby language.
+* [Ruby Rogues](http://rubyrogues.com/) is a podcast series on a variety of topics related to Ruby and
+Rails.
+
+See [this page](http://thinkinginrails.com/2010/04/favorite-ruby-and-rails-podcasts/) for a listing of
+a variety of additional Ruby- or Rails-related podcasts and screencasts.
+
+<a name="camps"></a>
+## Camps
+
+There are a variety of developer camps that aim to get folks up and running quickly on developing web
+application with Rails.
+
+* [StarterLeague](http://www.starterleague.com/)
+* [Dev Bootcamp](http://devbootcamp.com/)
+
+<a name="collegiate"></a>
+## Collegiate
+
+* The [UW-Madison Computer Science](http://cs.wisc.edu) department is now offering some courses on web
+development.
+* [Madison College](http://madisoncollege.edu/program-info/it-web-analyst-programmer) offers Ruby on Rails
+courses.
+* [The Hub](http://thehubclub.wordpress.com/) is a UW-Madison student organization that has worked with
+MadRailers in the past to put on Newbie Night events on campus to introduce students to Ruby and Rails.
